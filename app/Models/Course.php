@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Course extends Model
 {
@@ -23,7 +24,7 @@ class Course extends Model
     public function getImageUrlAttribute(): string
     {
         if (!empty($this->image)) {
-            return asset('storage/' . $this->image);
+            return Storage::disk('public')->url($this->image);
         }
 
         return asset('images/logo.png');

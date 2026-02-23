@@ -10,7 +10,7 @@
     <meta property="og:description" content="{{ $description ?? 'Learn Quran with Tajweed online in Pakistan. Tajweed Ul Quran offers online Quran classes for kids and adults with proper Tajweed.' }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request()->url() }}">
-    <meta property="og:image" content="{{ isset($ogImage) ? asset('storage/' . $ogImage) : asset('images/logo.png') }}">
+    <meta property="og:image" content="{{ isset($ogImage) ? \Illuminate\Support\Facades\Storage::disk('public')->url($ogImage) : asset('images/logo.png') }}">
 
     @yield('meta')
 

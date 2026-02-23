@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryImage extends Model
 {
@@ -19,7 +20,7 @@ class GalleryImage extends Model
     public function getImageUrlAttribute(): string
     {
         if (!empty($this->image_path)) {
-            return asset('storage/' . $this->image_path);
+            return Storage::disk('public')->url($this->image_path);
         }
 
         return asset('images/logo.png');

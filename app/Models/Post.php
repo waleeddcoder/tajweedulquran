@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
 {
@@ -18,7 +19,7 @@ class Post extends Model
     public function getFeaturedImageUrlAttribute(): string
     {
         if (!empty($this->featured_image)) {
-            return asset('storage/' . $this->featured_image);
+            return Storage::disk('public')->url($this->featured_image);
         }
 
         return asset('images/logo.png');
