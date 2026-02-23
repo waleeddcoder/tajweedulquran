@@ -21,7 +21,7 @@ class PostsTable
                 TextColumn::make('slug')
                     ->searchable(),
                 ImageColumn::make('featured_image')
-                    ->getStateUsing(fn ($record) => $record->featured_image ? asset('storage/' . $record->featured_image) : null)
+                    ->disk('public')
                     ->square()
                     ->size(60),
                 TextColumn::make('seo_title')

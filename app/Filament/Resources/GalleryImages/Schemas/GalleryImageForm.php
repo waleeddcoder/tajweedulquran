@@ -17,6 +17,7 @@ class GalleryImageForm
                     ->label('Gallery Image')
                     ->image()
                     ->disk('public')
+                    ->visibility('public')
                     ->directory('gallery')
                     ->imagePreviewHeight('200')
                     ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp', 'image/gif'])

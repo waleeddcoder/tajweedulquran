@@ -42,6 +42,7 @@ class CourseForm
                     ->label('Course Image')
                     ->image()
                     ->disk('public')
+                    ->visibility('public')
                     ->directory('courses')
                     ->imagePreviewHeight('150')
                     ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])

@@ -17,7 +17,7 @@ class GalleryImagesTable
         return $table
             ->columns([
                 ImageColumn::make('image_path')
-                    ->getStateUsing(fn ($record) => $record->image_path ? asset('storage/' . $record->image_path) : null)
+                    ->disk('public')
                     ->square()
                     ->size(60),
                 TextColumn::make('title')

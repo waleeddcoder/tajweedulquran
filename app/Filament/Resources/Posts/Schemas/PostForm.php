@@ -34,6 +34,7 @@ class PostForm
                     ->label('Featured Image')
                     ->image()
                     ->disk('public')
+                    ->visibility('public')
                     ->directory('blog')
                     ->imagePreviewHeight('150')
                     ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
