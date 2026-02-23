@@ -33,7 +33,7 @@ class PostForm
                 FileUpload::make('featured_image')
                     ->label('Featured Image')
                     ->image()
-                    ->disk('public')
+                    ->disk('uploads')
                     ->visibility('public')
                     ->directory('blog')
                     ->imagePreviewHeight('150')

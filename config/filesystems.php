@@ -47,6 +47,16 @@ return [
             'report' => false,
         ],
 
+        // Direct public disk — no symlink needed. Files go to public/uploads/
+        // and are immediately accessible at yoursite.com/uploads/...
+        'uploads' => [
+            'driver' => 'local',
+            'root' => public_path('uploads'),
+            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/uploads',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         'livewire-tmp' => [
             'driver'     => 'local',
             'root'       => storage_path('app/livewire-tmp'),

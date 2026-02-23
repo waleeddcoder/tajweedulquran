@@ -41,7 +41,7 @@ class CourseForm
                 FileUpload::make('image')
                     ->label('Course Image')
                     ->image()
-                    ->disk('public')
+                    ->disk('uploads')
                     ->visibility('public')
                     ->directory('courses')
                     ->imagePreviewHeight('150')

@@ -16,7 +16,7 @@ class GalleryImageForm
                 FileUpload::make('image_path')
                     ->label('Gallery Image')
                     ->image()
-                    ->disk('public')
+                    ->disk('uploads')
                     ->visibility('public')
                     ->directory('gallery')
                     ->imagePreviewHeight('200')
