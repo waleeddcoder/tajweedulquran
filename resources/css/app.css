@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+    --color-emerald-900: #064e3b;
+    --color-emerald-800: #065f46;
+    --color-gold-500: #d4af37;
+    --color-gold-400: #e0c25a;
+    --color-cream: #f8fbf9;
+
+    --font-playfair: 'Playfair Display', serif;
+    --font-inter: 'Inter', sans-serif;
+}
+
+@layer base {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-playfair);
+    }
+}
+
+.glass-header {
+    background: rgba(248, 251, 249, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(6, 78, 59, 0.05);
+}
+
+.btn-primary {
+    @apply bg-emerald-900 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 hover:bg-emerald-800 hover:shadow-lg hover:-translate-y-0.5 relative overflow-hidden inline-flex items-center gap-2;
+}
+
+.btn-secondary {
+    @apply bg-gold-500 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 hover:bg-gold-400 hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2;
+}
+
+.nav-link {
+    @apply text-emerald-900 font-medium transition-colors hover:text-gold-500 relative py-2;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-gold-500);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
